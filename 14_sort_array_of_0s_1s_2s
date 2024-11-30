@@ -1,0 +1,24 @@
+#include <bits/stdc++.h> 
+void sortArray(vector<int>& arr, int n)
+{
+    // lessssssssgooooooooooooo
+    int beg = 0, med = 0, end = n-1;
+    while(med <= end){
+        if(arr[med] == 0){
+            int temp = arr[beg];
+            arr[beg] = arr[med];
+            arr[med] = temp;
+            med++;
+            beg++;
+        }
+        else if(arr[med] == 1){
+            med++;
+        }
+        else{
+            int temp = arr[end];
+            arr[end] = arr[med];
+            arr[med] = temp;
+            end--;
+        }
+    }
+}

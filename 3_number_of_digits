@@ -1,0 +1,9 @@
+int countDigits(int n){
+	// Write your code here.
+	int r = 0;
+	while(n>0){
+		r++;
+		n/=10;
+	}	
+	return r;
+}

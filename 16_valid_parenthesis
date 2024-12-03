@@ -1,0 +1,36 @@
+bool isValidParenthesis(string s)
+{
+    //let's justt goooooooooooooooooo
+    stack<char> stck;
+
+    for(int i = 0; i<s.length(); i++){
+        //storing hte value
+        char x = s[i];
+        
+        //to push the string if it's an opening bracket
+        if (x == '(' || x == '{' || x == '[') {
+          stck.push(x);
+        }
+
+        //to check whether it's a closing bracket
+        else if (x == ']' || x == '}' || x == ')'){
+            //direct returning if stack is empty
+            if(stck.empty()){
+                return false;
+            }
+
+            //checking whether current ele and top of 
+            //stack brackets are of same type or not
+            if (x == '(' && stck.top() != ')' ||
+                x == '[' && stck.top() != ']' ||
+                x == '{' && stck.top() != '}'){
+                    return false;
+                }
+            //pop top stack's element if brackets are same
+            stck.pop();
+        }
+    }
+    
+    //returning either 0 || 1 
+    return stck.empty();
+}

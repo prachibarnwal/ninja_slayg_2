@@ -1,0 +1,13 @@
+int upperBound(vector<int> &arr, int x, int n){
+	
+	int beg = 0, end = n, med;
+	
+	while(beg < end){
+		med = (beg+end) / 2;
+		if(arr[med] > x)
+			end = med;
+		else
+			beg = med+1;
+	}	
+	return beg;
+}

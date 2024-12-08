@@ -1,0 +1,10 @@
+//day 8
+int calcGCD(int a, int b){
+    int res = (a<b) ? a : b;
+    while(res > 0){
+        if(a%res == 0 && b % res == 0)
+            break;
+        res--;
+    }
+    return res;
+}

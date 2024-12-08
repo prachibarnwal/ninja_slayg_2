@@ -1,0 +1,46 @@
+vector<int> spiralMatrix(vector<vector<int>>&MATRIX) {
+    //let's start the flowwwww
+
+    //result arr
+    vector<int> result;
+
+    //the one and only edge case if the matrix is KHAALI (like my brain)
+    if (MATRIX.empty() || MATRIX[0].empty()){
+      return result;
+    }
+    //four variables working as boundaries
+    int top = 0, bottom = MATRIX.size()-1, left = 0, right = MATRIX[0].size()-1;
+
+    //starting the funnn
+    while(top <= bottom && left <= right){
+        // start traversing left--right through top row
+        for(int i = left; i<= right; i++){
+            result.push_back(MATRIX[top][i]);
+        }
+        top++; //increasing top i.e., skipping the current row;
+
+        //start traversing top--botton through the right column
+        for(int i = top; i<=bottom;i++){
+            result.push_back(MATRIX[i][right]);
+        }
+        right--; // decrementing right to skip the current column;
+        
+        //start traversing right--lft through bottom row
+        if(top <= bottom){
+            for(int i = right; i>= left; i--){
+                result.push_back(MATRIX[bottom][i]);
+            }
+            bottom--; //decrementing bottom to skip the current row;
+        }
+        
+        //start traversing bottom--top through left column
+        if(left<=right){
+            for(int i = bottom;i>=top;i--){
+                result.push_back(MATRIX[i][left]);
+            }
+            left++; //incrementing left to skip current column;
+        }
+    }
+    //huhhhhhhhhhhh finallyyyyyyyyyyyyyyyy
+    return result;
+}

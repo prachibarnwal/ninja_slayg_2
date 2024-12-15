@@ -21,9 +21,9 @@ bool isValidParenthesis(string s)
 
             //checking whether current ele and top of 
             //stack brackets are of same type or not
-            if (x == '(' && stck.top() != ')' ||
-                x == '[' && stck.top() != ']' ||
-                x == '{' && stck.top() != '}'){
+            if(x == ')' && stk.top() != '(' ||
+                x == '}' && stk.top() != '{' ||
+                x == ']' && stk.top() != '['){
                     return false;
                 }
             //pop top stack's element if brackets are same
